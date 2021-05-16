@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Quiz from './Quiz'
 
 ReactDOM.render(
-  <h1>Quiz 100 seconds</h1>,
+  <Quiz />,
   document.querySelector('#root')
 );
 
