@@ -5,6 +5,7 @@ import {
 	Route
 } from 'react-router-dom';
 import QuizStart from './components/QuizStart';
+import QuizBody from './components/QuizBody';
 
 class Quiz extends React.Component {
 	render() {
@@ -13,6 +14,9 @@ class Quiz extends React.Component {
 				<div>
 					<h1>Quiz 100 seconds</h1>
 					<Switch>
+						<Route path="/quiz">
+							<QuizBody />
+						</Route>
 						<Route path="/">
 							<QuizStart />							
 						</Route>
