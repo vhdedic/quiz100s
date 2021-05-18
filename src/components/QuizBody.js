@@ -1,16 +1,41 @@
 import React from 'react';
 
 class QuizBody extends React.Component {
-	render() {
-		return (
-			<div>
-				<button>Answer A</button>
-				<button>Answer B</button>
-				<button>Answer C</button>	
-				<button>Answer D</button>			
-			</div>
-		)
-	}
+  constructor(props) {
+    super(props);
+    this.state = {time: 100};
+  }
+
+  componentDidMount() {
+    this.timeCounter = setInterval(() => this.timer(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timeCounter);
+  }
+
+  timer() {
+    if (this.state.time > 0) {
+      this.setState({
+        time:this.state.time-1
+      });
+    } 
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Question?</p>
+        <input type="button" className="button" value="A" />
+        <input type="button" className="button" value="B" />
+        <input type="button" className="button" value="C" />
+        <input type="button" className="button" value="D" />
+        <p>
+            Remaining time: {this.state.time}s
+          </p>
+      </div>
+    )
+  }
 }
 
 export default QuizBody;

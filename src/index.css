@@ -11,7 +11,7 @@ h1 {
   font-size: 1.5em;
 }
 
-button{
+.button{
   font-size: 1em;
   background-color: #5bc0de;
   margin: .5em 0;
@@ -21,7 +21,7 @@ button{
   width: 100%;
   
 }
-button:hover, button:active{
+.button:hover, .button:active{
   background-color: aqua;
   border: 1px solid blue;
 }
