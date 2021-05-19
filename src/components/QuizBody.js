@@ -1,4 +1,5 @@
 import React from 'react';
+import shuffle from 'shuffle-array';
 import questions from './json/questions.json';
 
 class QuizBody extends React.Component {
