@@ -1,4 +1,5 @@
 import React from 'react';
+import questions from './json/questions.json';
 
 class QuizBody extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class QuizBody extends React.Component {
   timer() {
     if (this.state.time > 0) {
       this.setState({
-        time:this.state.time-1
+        time:this.state.time - 1
       });
     } 
   }
