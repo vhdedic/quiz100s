@@ -9,7 +9,8 @@ class QuizBody extends React.Component {
     super(props);
     this.state = {
       time: 100,
-      score: 0
+      score: 0,
+      success: true
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -23,7 +24,7 @@ class QuizBody extends React.Component {
   }
 
   timer() {
-    if (this.state.time > 0) {
+    if (this.state.time > 0 && this.state.success) {
       this.setState({
         time:this.state.time - 1
       });
@@ -38,12 +39,16 @@ class QuizBody extends React.Component {
       this.setState({
         score:this.state.score+1
       });
+    } else {
+      this.setState({
+        success: false
+      });
     }
   }
 
   render() {
     const position = data[this.state.score];
-    if (this.state.time > 0) {
+    if (this.state.time > 0 && this.state.success) {
       return (
         <div>
           <p>{position.question}</p>
