@@ -1,6 +1,7 @@
 import React from 'react';
 import shuffle from 'shuffle-array';
 import questions from './json/questions.json';
+import QuizEnd from './QuizEnd';
 
 const data = shuffle(questions);
 
@@ -86,7 +87,7 @@ class QuizBody extends React.Component {
       )
     } else {
       return (
-        <p>End</p>
+        <QuizEnd finalScore={this.state.score} finalTime={this.state.time} />
       )
     }
   }
