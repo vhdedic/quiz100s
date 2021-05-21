@@ -85,9 +85,19 @@ class QuizBody extends React.Component {
           </p>
         </div>
       )
-    } else {
+    } else if (this.state.time === 0) {
       return (
-        <QuizEnd finalScore={this.state.score} finalTime={this.state.time} />
+        <div>
+          <p>Time expired.</p>
+          <QuizEnd finalScore={this.state.score} finalTime={this.state.time} />
+        </div>
+      )
+    } else if (!this.state.success) {
+      return (
+        <div>
+          <p>Wrong Answer.</p>
+          <QuizEnd finalScore={this.state.score} finalTime={this.state.time} />
+        </div>
       )
     }
   }

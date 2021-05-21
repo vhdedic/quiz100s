@@ -5,45 +5,23 @@ import {
 
 class QuizEnd extends React.Component {
   render() {
-    if (this.props.finalTime === 0) {
-      return (
-        <div>
-          <p>Time expired.</p>
-          <Link to="/" style={{textDecoration: 'none'}}>
-            <input 
-              type="button"
-              className="button" 
-              value="Try Again"
-            />
-          </Link>
-          <p>
-            Remaining time: {this.props.finalTime}s
-          </p>
-          <p>
-            Score: {this.props.finalScore}
-          </p>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <p>Wrong Answer.</p>
-          <Link to="/" style={{textDecoration: 'none'}}>
+    return (
+      <div>
+        <Link to="/">
           <input 
-              type="button"
-              className="button" 
-              value="Try Again"
-            />
-          </Link>
-          <p>
-            Remaining time: {this.props.finalTime}s
-          </p>
-          <p>
-            Score: {this.props.finalScore}
-          </p>
-        </div>
-      )
-    }
+            type="button"
+            className="button" 
+            value="Try Again"
+          />
+        </Link>
+        <p>
+          Remaining time: {this.props.finalTime}s
+        </p>
+        <p>
+          Score: {this.props.finalScore}
+        </p>
+      </div>
+    )
   }
 }
 
