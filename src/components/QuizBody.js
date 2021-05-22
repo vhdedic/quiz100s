@@ -49,34 +49,22 @@ class QuizBody extends React.Component {
 
   render() {
     const position = data[this.state.score];
+    const allAnswers = position.answers;
+    const answerInput = allAnswers.map((oneAnswer, index) => (
+      <input 
+        type="button"
+        className="button"
+        value={oneAnswer}
+        onClick={this.handleClick}
+        key={index}
+      />
+    ))
+
     if (this.state.time > 0 && this.state.success) {
       return (
         <div>
           <p>{position.question}</p>
-          <input 
-            type="button" 
-            className="button" 
-            value={position.answer_a}
-            onClick={this.handleClick}
-          />
-          <input
-           type="button"
-           className="button"
-           value={position.answer_b}
-           onClick={this.handleClick}
-          />
-          <input 
-            type="button" 
-            className="button" 
-            value={position.answer_c}
-            onClick={this.handleClick}
-          />
-          <input 
-            type="button" 
-            className="button" 
-            value={position.answer_d}
-            onClick={this.handleClick}
-          />
+          <div>{answerInput}</div>
           <p>
             Remaining time: {this.state.time}s
           </p>
