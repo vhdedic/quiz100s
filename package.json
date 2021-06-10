@@ -1,6 +1,6 @@
 {
-  "name": "quiz100s-react-app",
-  "version": "0.2.0",
+  "name": "quiz100s",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
