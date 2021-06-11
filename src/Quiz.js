@@ -10,7 +10,7 @@ import QuizBody from './components/QuizBody';
 class Quiz extends React.Component {
   render() {
     return (
-      <Router>
+      <Router basename="/quiz100s" >
         <div>
           <h1>Quiz 100 seconds</h1>
           <Switch>
