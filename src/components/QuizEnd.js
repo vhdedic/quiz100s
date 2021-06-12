@@ -8,11 +8,7 @@ class QuizEnd extends React.Component {
     return (
       <div>
         <Link to="/">
-          <input 
-            type="button"
-            className="button" 
-            value="Try Again"
-          />
+          <button>Try Again</button>
         </Link>
         <p>
           Remaining time: {this.props.finalTime}s

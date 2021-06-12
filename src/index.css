@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 1em auto;
-  width: 1250px;
+  margin: 0;
+	padding: 0;
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5em;
 }
@@ -11,7 +16,15 @@ h1 {
   font-size: 1.5em;
 }
 
-.button{
+.quiz {
+  margin: 0 1em;
+}
+
+p {
+  margin: .5em 0 0 0;
+}
+
+button{
   font-size: 1em;
   background-color: #5bc0de;
   margin: .5em 0;
@@ -21,7 +34,21 @@ h1 {
   width: 100%;
   
 }
-.button:hover, .button:active{
+button:hover, button:active{
   background-color: aqua;
   border: 1px solid blue;
+}
+
+@media screen and (min-width: 1250px) {
+  body {
+    margin: 0 auto;
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 2em;
+    width: 1250px;
+  }
 }

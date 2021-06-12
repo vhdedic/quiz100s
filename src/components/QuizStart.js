@@ -6,10 +6,10 @@ import {
 class QuizStart extends React.Component {
   render() {
     return (
-      <div>
+      <div className="quiz">
         <p>Press Start.</p>
         <Link to="/quiz">
-        <input type="button" className="button" value="Start" />
+        <button>Start</button>
         </Link>
       </div>
     )
