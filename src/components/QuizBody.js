@@ -74,6 +74,8 @@ class QuizBody extends React.Component {
         </div>
       )
     } else if (this.state.time === 0) {
+      shuffle(questions);
+      
       return (
         <div className="quiz">
           <p>Time expired.</p>
@@ -81,6 +83,8 @@ class QuizBody extends React.Component {
         </div>
       )
     } else if (!this.state.success) {
+      shuffle(questions);
+
       return (
         <div className="quiz">
           <p>Wrong Answer.</p>

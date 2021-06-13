@@ -9,7 +9,7 @@ class QuizStart extends React.Component {
       <div className="quiz">
         <p>Press Start.</p>
         <Link to="/quiz">
-        <button>Start</button>
+          <button>Start</button>
         </Link>
       </div>
     )
