@@ -38,7 +38,7 @@ class QuizBody extends React.Component {
 
     if (answer === correctAnswer) {
       this.setState({
-        score:this.state.score+1
+        score: this.state.score + 1
       });
     } else {
       this.setState({
@@ -54,6 +54,7 @@ class QuizBody extends React.Component {
       <button
         onClick={this.handleClick}
         key={index}
+        value={oneAnswer}
       >
         {oneAnswer}
       </button> 
