@@ -73,12 +73,11 @@ function QuizBody() {
 
     return (
       <div className="quiz">
-        <p>Wrong Answer.</p>
+        <p>Wrong. Correct answer is "{position.correct}".</p>
         <QuizEnd finalScore={score} finalTime={time} />
       </div>
     )
   }
-
 }
 
 export default QuizBody;
