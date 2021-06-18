@@ -7,24 +7,22 @@ import {
 import QuizStart from './components/QuizStart';
 import QuizBody from './components/QuizBody';
 
-class Quiz extends React.Component {
-  render() {
-    return (
-      <Router basename="/quiz100s" >
-        <div>
-          <h1>Quiz 100 seconds</h1>
-          <Switch>
-            <Route path="/quiz">
-              <QuizBody />
-            </Route>
-            <Route path="/">
-              <QuizStart />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    )
-  }
+function Quiz() {
+  return (
+    <Router basename="/quiz100s" >
+      <div>
+        <h1>Quiz 100 seconds</h1>
+        <Switch>
+          <Route path="/quiz">
+            <QuizBody />
+          </Route>
+          <Route path="/">
+            <QuizStart />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  )
 }
 
 export default Quiz;
