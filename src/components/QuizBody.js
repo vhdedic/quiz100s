@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import shuffle from 'shuffle-array';
 import questions from './json/questions.json';
 import QuizEnd from './QuizEnd';
+import { Box, Button, Typography } from '@material-ui/core';
 
 const data = shuffle(questions);
 
@@ -23,7 +24,7 @@ function QuizBody() {
   })
 
   const handleClick = (e) => {
-    const answer = e.target.value;
+    const answer = e.currentTarget.value;
     const correctAnswer = data[score].correct;
 
     if (answer === correctAnswer) {
@@ -33,49 +34,55 @@ function QuizBody() {
     }
   }
 
-
   const position = data[score];
   const allAnswers = position.answers;
   const answerInput = allAnswers.map((oneAnswer, index) => (
-    <button
-      onClick={handleClick}
-      key={index}
-      value={oneAnswer}
-    >
-      {oneAnswer}
-    </button>
+    <Box mb={3}>
+      <Button
+        onClick={handleClick}
+        key={index}
+        value={oneAnswer}
+        color={'primary'}
+        variant={'contained'}
+        size={'large'}
+        children={oneAnswer}
+        fullWidth
+      />
+    </Box>
   ))
 
   if (time > 0 && success) {
     return (
-      <div className="quiz">
-        <p>{position.question}</p>
-        <div>{answerInput}</div>
-        <p>
+      <Box>
+        <Typography variant={'h5'} paragraph>{position.question}</Typography>
+        <Box>{answerInput}</Box>
+        <Typography variant={'h5'} paragraph>
           Remaining time: {time}s
-          </p>
-        <p>
+        </Typography>
+        <Typography variant={'h5'} paragraph>
           Score: {score}
-        </p>
-      </div>
+        </Typography>
+      </Box>
     )
   } else if (time === 0) {
     shuffle(questions);
 
     return (
-      <div className="quiz">
-        <p>Time expired.</p>
+      <Box>
+        <Typography variant={'h5'} paragraph>Time expired.</Typography>
         <QuizEnd finalScore={score} finalTime={time} />
-      </div>
+      </Box>
     )
   } else if (!success) {
     shuffle(questions);
 
     return (
-      <div className="quiz">
-        <p>Wrong. Correct answer is "{position.correct}".</p>
+      <Box>
+        <Typography variant={'h5'} paragraph>
+          Wrong. Correct answer is "{position.correct}".
+        </Typography>
         <QuizEnd finalScore={score} finalTime={time} />
-      </div>
+      </Box>
     )
   }
 }

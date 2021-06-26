@@ -1,21 +1,28 @@
 import React from 'react';
-import {
-  Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Box, Button, Typography } from '@material-ui/core';
 
 function QuizEnd(props) {
   return (
-    <div>
+    <Box>
       <Link to="/">
-        <button>Try Again</button>
+        <Button 
+          color={'primary'} 
+          variant={'contained'} 
+          size={'large'} 
+          children={'Try Again'}
+          fullWidth
+        />
       </Link>
-      <p>
-        Remaining time: {props.finalTime}s
-        </p>
-      <p>
-        Score: {props.finalScore}
-      </p>
-    </div>
+      <Box mt={3}>
+        <Typography variant={'h5'} paragraph>
+          Remaining time: {props.finalTime}s
+        </Typography>
+        <Typography variant={'h5'} paragraph>
+          Score: {props.finalScore}
+        </Typography>
+      </Box>
+    </Box>
   )
 }
 
