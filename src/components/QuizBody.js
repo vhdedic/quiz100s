@@ -42,8 +42,7 @@ function QuizBody() {
         onClick={handleClick}
         key={index}
         value={oneAnswer}
-        color={'primary'}
-        variant={'contained'}
+        variant={'outlined'}
         size={'large'}
         children={oneAnswer}
         fullWidth

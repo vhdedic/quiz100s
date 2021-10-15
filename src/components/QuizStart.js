@@ -10,8 +10,7 @@ function QuizStart() {
       <Typography variant={'h5'} paragraph>Press Start.</Typography>
       <Link to="/quiz">
         <Button 
-          color={'primary'} 
-          variant={'contained'} 
+          variant={'outlined'} 
           size={'large'}
           children={'Start'} 
           fullWidth

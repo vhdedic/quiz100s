@@ -7,8 +7,7 @@ function QuizEnd(props) {
     <Box>
       <Link to="/">
         <Button 
-          color={'primary'} 
-          variant={'contained'} 
+          variant={'outlined'} 
           size={'large'} 
           children={'Try Again'}
           fullWidth
